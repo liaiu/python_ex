@@ -1,16 +1,16 @@
-# def ex_one(*args):
-#     print("My type is: {}".format(type(args)))
-#     s = 0
-#     for i in args:
-#         s += i
-#     return s
-#
-#
+def ex_one(*args):
+    print("My type is: {}".format(type(args)))
+    s = 0
+    for i in args:
+        s += i
+    return s
+
+
 # print(ex_one(1, 2, 3))
 # print(ex_one(2))
 # print(ex_one())
 # print(ex_one(*range(3)))
-
+# print(ex_one(range(3)))
 
 # def ex_two(**kwargs):
 #     result = ""
@@ -19,9 +19,10 @@
 #         new_line = "{}__{}".format(key, val)
 #         result += "\n" + new_line
 #     return result
-#
+
 # print(ex_two(**dict(test="abc", new="gft")))
 # print(ex_two(test="abc", new="gft"))
+# print(ex_two())
 
 
 def ex_three(a, b, *args, **kwargs):
@@ -39,4 +40,5 @@ def ex_three(a, b, *args, **kwargs):
 # print(ex_three(4, 5, "t", "n"))
 # print(ex_three(4, 5, "t", "n", k=3))
 # print(ex_three(4, 5, "t", "n", k=3, m=4))
-# print(ex_three(a=4, b=5, k=3, m=4))
+# (ex_three(a=4, b=5, k=3, m=4))
+# print(ex_three(6, 7, 8, a=5))

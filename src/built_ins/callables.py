@@ -1,12 +1,17 @@
+class ExtraInt(int):
+
+    def __call__(self, *args, **kwargs):
+        print("Args: {}".format(args))
+        print("Kwargs: {}".format(kwargs))
 
 
 class SumItUp:
 
     def __init__(self, a=4, b=10):
-        self.a = a
+        self.a = ExtraInt(a)
         self.b = b
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self, *args):
         sum_list = [self.a, self.b, *args]
         return sum(sum_list)
 
@@ -22,9 +27,7 @@ class SumItUp:
         print(callables)
         print(non_callables)
 
-a = SumItUp()
-
-print(a())
-print(a(10))
-
-a.get_attr()
+obj_a = SumItUp()
+print(obj_a())
+print(obj_a(10))
+obj_a.a()
